@@ -1,6 +1,6 @@
 {
   "name": "is-down",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check if a website is down.",
   "license": "MIT",
   "repository": "egoist/is-down",
