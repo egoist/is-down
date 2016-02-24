@@ -1,0 +1,29 @@
+{
+  "name": "is-down",
+  "version": "0.0.0",
+  "description": "Check if a website is down.",
+  "license": "MIT",
+  "repository": "egoist/is-down",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com",
+    "url": "github.com/egoist"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "bin": "is-down",
+  "scripts": {
+    "test": "echo lol"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "uptime"
+  ],
+  "dependencies": {
+    "meow": "^3.7.0",
+    "node-fetch": "^1.3.3"
+  }
+}

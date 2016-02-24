@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+'use strict'
+
+const meow = require('meow')
+const fetch = require('node-fetch')
+
+const cli = meow(`
+  Usage:
+    is <website> down: Check if a website is down
+`, {
+	alias: {
+		s: 'ssl'
+	}
+})
+
+
+let url = cli.input[0]
+switch (url) {
+	case 'github':
+		url = 'https://github.com'
+		break
+	default:
+		if (!/^https?:\/\/[^.]+/.test(url)) {
+			url = `http${cli.flags.ssl ? 's' : ''}://${url}`
+		}
+}
+
+fetch(url)
+	.then(data => {
+		if (data.status === 200) {
+			console.log(`${url} is up! Go to work!`)
+		} else {
+			console.log(`${url} is down! Go outside!`)
+			process.exitCode = 1
+		}
+	})
