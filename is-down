@@ -25,12 +25,16 @@ switch (url) {
 		}
 }
 
-fetch(url)
+fetch(url, {timeout: 5000})
 	.then(data => {
 		if (data.status === 200) {
 			console.log(`${url} is up! Go to work!`)
 		} else {
 			console.log(`${url} is down! Go outside!`)
-			process.exitCode = 1
+			process.exitCode = data.status
 		}
+	})
+	.catch(e => {
+		console.log(e.stack)
+		process.exitCode = 1
 	})
