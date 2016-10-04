@@ -17,7 +17,7 @@
     "test": "echo lol"
   },
   "files": [
-    "index.js"
+    "is-down"
   ],
   "keywords": [
     "uptime"
